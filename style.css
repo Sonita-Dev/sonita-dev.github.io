@@ -1,0 +1,582 @@
+/* Original CSS (Keep As Is) */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #080808;
+  color: aliceblue;
+}
+#header {
+  width: 100%;
+  height: 100vh;
+}
+.container {
+  padding: 10px 10%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative; /* Needed for absolute positioning of icons */
+}
+.header-text p {
+  font-size: px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #b026ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+.img {
+  width: 30%;
+  height: 30%;
+  filter: brightness(0.9);
+  float: right;
+  margin-top: -310px;
+  margin-right: 200px;
+}
+.header-text {
+  margin-left: 80px;
+  margin-top: 10%;
+  font-size: 20px;
+}
+.header-text h1 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+.header-text h1 span {
+  color: #b026ff;
+}
+/* -----------about--------- */
+#about {
+  padding: 80px 0;
+  color: #ababab;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.col-1 {
+  flex-basis: 35%;
+}
+.col-1 img {
+  width: 110%;
+  border-radius: 15px;
+}
+.col-2 {
+  flex-basis: 55%;
+}
+.sub-title {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+.col-2 h1 {
+  font-size: 40px;
+}
+.col-2 p {
+  font-size: 20px;
+}
+.tab-title {
+  display: flex;
+  margin: 20px 0 40px;
+  justify-content: center;
+}
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.tab-links:last-child {
+  margin-right: 0;
+}
+.tab-links::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #b026ff;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s ease;
+}
+.tab-links.active-link::after {
+  width: 50%;
+}
+.tab-contents ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+.tab-contents ul li span {
+  color: #cf9fff;
+  font-size: 25px;
+}
+.tab-contents {
+  display: none;
+}
+.tab-contents.active-tab {
+  display: block;
+}
+/* -----------services--------- */
+#services {
+  padding: 30px 0;
+}
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 50px;
+  margin-top: 50px;
+}
+.services-list p {
+  font-size: 17px;
+}
+.services-list a {
+  font-size: 17px;
+}
+.services-list div {
+  background: #262626;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 10px;
+  transition: background 0.5s, transform 0.5s;
+}
+.services-list div i {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.services-list div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.services-list div a {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 14px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.services-list div:hover {
+  background: #b026ff;
+  transform: translateY(-10px);
+}
+.services-list div:hover a {
+  color: #262626;
+  background: #ffff;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 8px;
+}
+/* -----------portfolio--------- */
+#portfolio {
+  padding: 50px 0;
+}
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 50px;
+  margin-top: 50px;
+}
+.work-item {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.work-item img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+.layer {
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #b026ff);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  font-size: 14px;
+  text-align: center;
+  transition: height 0.5s;
+  color: #fff;
+}
+.layer h3 {
+  margin-top: 0;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.layer a {
+  margin-top: 20px;
+  color: #b026ff;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 45px;
+  background: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+}
+.work-item:hover img {
+  transform: scale(1.1);
+}
+.work-item:hover .layer {
+  height: 100%;
+}
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #b026ff;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s, color 0.5s;
+}
+.btn:hover {
+  background: #b026ff;
+}
+/* ---------contact---------  */
+.contact-left {
+  flex-basis: 35%;
+}
+.contact-left h1 {
+  margin-top: 10px;
+}
+.contact-right {
+  flex-basis: 60%;
+}
+.contact-left p {
+  margin-top: 30px;
+}
+.contact-left p i {
+  color: #b026ff;
+  margin-right: 15px;
+  font-size: 15px;
+}
+.social-icon {
+  margin-top: 30px;
+}
+.social-icon a {
+  text-decoration: none;
+  font-size: 25px;
+  margin-right: 15px;
+  color: #cf9fff;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.social-icon a:hover {
+  color: #b026ff;
+  transform: translateY(-5px);
+}
+.btn.btn2 {
+  display: inline-block;
+  background: #b026ff;
+}
+.contact-right form {
+  width: 100%;
+}
+form input,
+form textarea {
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  margin: 15px 0;
+  border: 0;
+  background: #262626;
+  font-size: 18px;
+  border-radius: 8px;
+  color: #fff;
+}
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #262626;
+  margin-top: 20px;
+  font-weight: 300;
+}
+.copyright i {
+  color: #ff004f;
+}
+
+/* Initially hide Font Awesome icons (menu/close) used for mobile nav toggle */
+nav .fa-solid {
+  display: none;
+  cursor: pointer;
+}
+
+/* ============================================ */
+/* ----------- Responsive Styles Start -------- */
+/* ============================================ */
+
+/* ---- Medium Devices (Tablets, Small Laptops) ---- */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 10px 7%;
+  }
+  .header-text {
+    margin-left: 40px;
+    margin-top: 15%;
+  }
+  .header-text h1 {
+    font-size: 35px;
+  }
+  .img {
+    width: 35%;
+    height: auto;
+    margin-top: -250px;
+    margin-right: 50px;
+  }
+  .sub-title {
+    font-size: 35px;
+  }
+  .col-1 {
+    flex-basis: 40%;
+  }
+  .col-2 {
+    flex-basis: 50%;
+  }
+  .col-1 img {
+    width: 100%;
+  }
+  .tab-links {
+    margin-right: 30px;
+  }
+  .services-list,
+  .work-list {
+    grid-gap: 40px;
+  }
+}
+
+/* ---- Small Devices (Portrait Tablets, Large Phones) ---- */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px 5%;
+  }
+  #header {
+    height: auto;
+    padding-bottom: 50px;
+  }
+  .header-text {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 25%;
+    font-size: 18px;
+  }
+  .header-text h1 {
+    font-size: 30px;
+  }
+  .img {
+    width: 25%;
+    height: 25%;
+    float: none;
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 5%;
+    margin-top: 15px;
+  }
+
+  nav ul li {
+    margin: 10px 15px;
+  }
+
+  #about {
+    padding: 60px 0;
+  }
+}
+
+/* ---- Extra Small Devices (Mobile Phones) ---- */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px 15px;
+  }
+  #header {
+    padding-bottom: 30px;
+  }
+  .header-text {
+    margin-top: 5%;
+    font-size: 16px;
+  }
+  .header-text p {
+    font-size: 23px;
+  }
+  .header-text h1 {
+    font-size: 30px;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+  .sub-title {
+    margin-top: 2px;
+    font-size: 30px;
+  }
+  .col-1 {
+    flex-basis: 100%; /* Make col-1 take full width */
+    text-align: center; /* Center the image horizontally */
+    order: 2; /* Move col-1 below col-2 */
+  }
+  .col-2 {
+    flex-basis: 100%; /* Make col-2 take full width */
+    order: 1; /* Ensure col-2 appears above col-1 */
+    font-size: 18px;
+    text-align: center; /* Center the text horizontally */
+    margin-left: 0; /* Remove unnecessary margin */
+  }
+  .col-2 p {
+    font-size: 17px;
+  }
+  .tab-links {
+    font-size: 17px;
+  }
+  .tab-contents li {
+    font-size: 17px;
+  }
+  .tab-contents ul li span {
+    font-size: 20px;
+  }
+  .col-1 img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 0; /* Center the image horizontally */
+    margin-top: 20px; /* Add spacing between col-2 and col-1 img */
+  }
+
+  /* Show icons (assuming .fa-bars and .fa-xmark classes used in HTML) */
+  nav .fa-solid {
+    display: block; /* Show the icons */
+    color: #fff; /* Make it visible on dark background */
+    font-size: 25px;
+    margin-right: 20px;
+    cursor: pointer; /* Change cursor to pointer for better UX */
+  }
+  nav ul {
+    background: #b026ff;
+    position: fixed; /* Fixed position - stays put on scroll */
+    top: 0;
+    right: -200px; /*hidden the menu bar*/
+    width: 200px;
+    height: 100vh; /* Full height */
+    padding-top: 50px;
+    z-index: 2; /* Ensure it appears above other content */
+    transition: right 0.5s ease; /* Smooth transition for slide-in effect */
+  }
+  nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+    cursor: pointer;
+  }
+  /* Style list items within the mobile menu */
+  nav ul li {
+    display: block; /* Stack items vertically */
+    margin: 25px; /* Adjust vertical and horizontal margin */
+  }
+  nav ul li a {
+    font-size: 18px; /* Larger font size for touch */
+  }
+  nav ul li a::after {
+    background: #fff; /* Ensure underline is visible */
+  }
+  nav ul .fa-xmark {
+    display: block; /* Show it */
+    position: absolute;
+    top: 25px;
+    left: 25px; /* Position top-left inside the menu */
+    color: #fff; /* Make it visible on dark background */
+    /* z-index should be inherited or slightly higher if needed */
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+  .about-col-2 {
+    font-size: 16px;
+  }
+  .contact-left,
+  .contact-right {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 14px;
+  }
+}
+#msg {
+  color: #b026ff;
+  margin-top: -40px;
+  display: block;
+}
